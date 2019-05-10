@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Checkout.associate = function(models) {
-    Checkout.belongsTo(models.Users, {
+    Checkout.belongsTo(models.User, {
       foreignKey: 'userId',
     });
   };
 
   Checkout.associate = function(models) {
-    Checkout.belongsTo(models.Books, {
+    Checkout.belongsTo(models.Book, {
       foreignKey: 'bookId',
     });
   };
