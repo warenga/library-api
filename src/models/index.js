@@ -3,9 +3,9 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
-import basename from path.basename(__filename);
+const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-import config from ('__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config.json')[env];
 
 const db = {};
 
