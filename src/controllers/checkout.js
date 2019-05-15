@@ -1,13 +1,14 @@
+import {Book} from '../models';
 import {Checkout} from '../models';
 
 module.exports = {
   create(req, res) {
     return Checkout
       .create({
-        userId: req.body.user,
-        bookId: req.body.book,
+        userId: req.user.id,
+        bookId: req.body.bookId,
       })
-      .then((book) => res.status(201).send(book))
+      .then(() => res.status(201).send({message: "You've checkout book"}))
       .catch(error => res.status(400).send(error));
   },
 
