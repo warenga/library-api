@@ -27,11 +27,15 @@ module.exports = {
           as: 'bookId',
         },
       },
-      borrowedOn: {
+      returnedOn: {
+        type: Sequelize.DATE
+      },
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      returnedOn: {
+      updatedAt: {
+        allowNull: false,
         type: Sequelize.DATE
       },
     });
